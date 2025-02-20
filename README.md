@@ -26,6 +26,10 @@ Create an application in React where users can input their information and gener
 
 #### Final Screenshot
 
+#### Wireframe
+
+![](./wireframe.png)
+
 
 
 ### Links
