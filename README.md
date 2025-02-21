@@ -1,8 +1,6 @@
-# odin-cv-application
-
 # The Odin Project - React CV Application
 
-This is a solution to the [CV Application project on The Odin Project](https://www.theodinproject.com/lessons/node-path-react-new-cv-application). The Odin Project is a free open-source coding curriculum that provides a comprehensive study path for aspiring developers. 
+This is my solution to the [CV Application project on The Odin Project](https://www.theodinproject.com/lessons/node-path-react-new-cv-application). The Odin Project is a free open-source coding curriculum that provides a comprehensive study path for aspiring developers. 
 
 ## Table of contents
 
@@ -41,9 +39,7 @@ Create an application in React where users can input their information and gener
 ### Built with
 
 - Figma (wireframe)
-- React 
-- Vite
-- Node
+- Vite, React, and Node.js
 
 ### What I learned
 
@@ -55,6 +51,7 @@ Create an application in React where users can input their information and gener
 
 ### Useful resources
 
+1. Can create vite in existing folder using, `npm create vite@latest ./` from [Reddit](https://www.reddit.com/r/webdev/comments/pk92o7/use_vite_in_the_current_directory/)
 
 
 ## Author
