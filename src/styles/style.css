@@ -1,0 +1,70 @@
+/*  
+ NEED TO ADDRESS
+    - Display isn't taking full screen, dispite parent filling space
+    - 
+    - 
+ */
+
+:root {
+  /* font information */
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #242424;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+
+  /* variables 🌸*/
+  --spacing-default: 24px;
+
+  /* span full page */
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+  /* size */
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0, 0;
+
+  /* color */
+  background-color: #f2f2f2;
+}
+
+.display {
+  /* size */
+  padding: var(--spacing-default) var(--spacing-default);
+  height: 100%;
+
+  /* orientation */
+  display: flex;
+  flex: auto;
+  flex-direction: row;
+  gap: var(--spacing-default);
+  
+  /* color */
+  background-color: lightgrey;
+}
+
+.menuColumn {
+  /* size */
+  width: 50%;
+  
+  /* color */
+  background-color: lightyellow;
+  
+}
+
+.docColumn {
+  /* size */
+  width: 100%;
+
+  /* color */
+  background-color: lightcyan;
+  
+}
+
+
+
