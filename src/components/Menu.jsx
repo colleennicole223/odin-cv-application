@@ -3,7 +3,10 @@ import React from 'react'
 export default function Menu() {
     return (
         <>
-            <h1>Hello Menu</h1>
+            <div id='menu'>
+                <h1>Menu</h1>
+            </div>
+            
         </>
     )
 }
