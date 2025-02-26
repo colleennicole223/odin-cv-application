@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './styles/style.css'
-import Menu from './components/Menu.jsx'
+import MenuPersonalInfo from './components/MenuPersonalInfo.jsx'
 import Render from './components/Render.jsx'
 import Control from './components/Control.jsx'
 
@@ -11,12 +11,9 @@ function App() {
     <>
       <div className='display'>
         <div className='menuColumn'>
-          <Menu></Menu>
-          <Menu></Menu>
-          <Menu></Menu>
-          <Menu></Menu>
-          <Menu></Menu>
-          <Menu></Menu>
+          <MenuPersonalInfo 
+            title = "Personal Information"
+            />
         </div>
         <div className='docColumn'>
           <Control></Control>
