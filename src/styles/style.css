@@ -27,7 +27,7 @@
   background-color: pink;
 }
 
-h1{
+h1, h2, h3{
   padding: 0px 0px;
   margin: 0px;
 }
@@ -102,3 +102,26 @@ h1{
   background-color: var(--color-grey-200);
 }
 
+#render {
+  /* size */
+  width: 100%;
+  aspect-ratio: 1/1.4142;
+
+  /* color */
+  background-color: white;
+}
+
+#contentHeader, #contentContact {
+  /* size */
+  padding: var(--spacing-thin) var(--spacing-thin);
+  width: 100%;
+}
+
+#contentContact {
+  /* orientation */
+  display: flex;
+  flex: auto;
+  flex-direction: row;
+  justify-content: left;
+  gap: var(--spacing-gap);
+}

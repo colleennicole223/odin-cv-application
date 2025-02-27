@@ -4,8 +4,9 @@ import MenuPersonalInfo from './components/MenuPersonalInfo.jsx'
 import Render from './components/Render.jsx'
 import Control from './components/Control.jsx'
 
+
 function App() {
-  const [count, setCount] = useState(0)
+  const [getfullName, setFullName] = useState("Melissa Meyers");
 
   return (
     <>
@@ -13,11 +14,12 @@ function App() {
         <div className='menuColumn'>
           <MenuPersonalInfo 
             title = "Personal Information"
+            setFullName = {setFullName}
             />
         </div>
         <div className='docColumn'>
           <Control></Control>
-          <Render></Render>
+          <Render fullName = {getfullName}></Render>
         </div>
       </div>
     </>

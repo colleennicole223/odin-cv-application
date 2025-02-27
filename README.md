@@ -43,7 +43,10 @@ Create an application in React where users can input their information and gener
 
 ### What I learned
 
-
+- React
+  - Practiced passing in properties into and between components
+- CSS
+  - Can set ratio with `aspect-ratio`
 
 ### Continued development
 
