@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Render({fullName}) {
+export default function Render({fullName, email, phoneNumber, location}) {
     return (
         <>
             <div id='render'>
@@ -9,9 +9,9 @@ export default function Render({fullName}) {
                 </div>
 
                 <div id='contentContact'>
-                    <h3>{fullName}</h3>
-                    <h3>{fullName}</h3>
-                    <h3>{fullName}</h3>
+                    <h3>{email}</h3>
+                    <h3>{phoneNumber}</h3>
+                    <h3>{location}</h3>
                 </div>
             </div>
             

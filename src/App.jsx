@@ -6,20 +6,32 @@ import Control from './components/Control.jsx'
 
 
 function App() {
-  const [getfullName, setFullName] = useState("Melissa Meyers");
+  const [getPersonal, setPersonal] = useState({
+    name: "Full Name", 
+    phoneNumber:"(#) ###-###-####",
+    email: "username@email.com",
+    location:"Location",
+  });
+
+  
 
   return (
     <>
       <div className='display'>
         <div className='menuColumn'>
           <MenuPersonalInfo 
-            title = "Personal Information"
-            setFullName = {setFullName}
+            setPersonal = {setPersonal}
+            getPersonal = {getPersonal}
             />
         </div>
         <div className='docColumn'>
           <Control></Control>
-          <Render fullName = {getfullName}></Render>
+          <Render 
+            fullName = {getPersonal.name}
+            email = {getPersonal.email}
+            phoneNumber={getPersonal.phoneNumber}
+            location={getPersonal.location}
+            />
         </div>
       </div>
     </>
