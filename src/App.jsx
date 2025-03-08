@@ -17,22 +17,24 @@ function App() {
   });
 
   // 🏫 Store education experience, updated through MenuEducation
-  const [getEducation, setEducation] = useState({
+  const [getEducation, setEducation] = useState([
+    {id: 0,
     university: "University Name",
     degree: "Degree Earned",
     start: "MM/YY",
     end: "MM/YY",
-    location: "City, ST"
-  });
+    location: "City, ST"},
+  ]);
 
   // 🏢 Store work experience, updated through MenuExperience
-  const [getExperience, setExperience] = useState({
+  const [getExperience, setExperience] = useState([
+    {id: 0,
     company: "Company name",
     title: "Role title",
     start: "MM/YY",
     end: "MM/YY",
-    location: "City, ST"
-  });
+    location: "City, ST"}
+  ]);
 
   return (
     <>
@@ -52,11 +54,9 @@ function App() {
         <div className='docColumn'>
           <Control></Control>
           <Render 
-            fullName = {getPersonal.name}
-            email = {getPersonal.email}
-            phoneNumber={getPersonal.phoneNumber}
-            location={getPersonal.location}
-            education={getEducation}
+            getPersonal = {getPersonal}
+            getEducation = {getEducation}
+            getExperience = {getExperience}
             />
         </div>
 
