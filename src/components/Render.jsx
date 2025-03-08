@@ -16,17 +16,21 @@ export default function Render({getPersonal, getEducation}) {
 
                 <div>
                     {getEducation.map(function (education) {
-                        return (
-                            <div key={education.id}>
-                                <div id='contentContact'>
-                                    <h3>{education.degree}</h3>
-                                    <h3>{education.start} - {education.end}</h3>
+                        if(education.id == 0){
+
+                        }else{
+                            return (
+                                <div key={education.id}>
+                                    <div id='contentContact'>
+                                        <h3>{education.degree}</h3>
+                                        <h3>{education.start} - {education.end}</h3>
+                                    </div>
+                                    <div id='contentContact'>
+                                        <h3>{education.university} in {education.location}</h3>
+                                    </div>
                                 </div>
-                                <div id='contentContact'>
-                                    <h3>{education.university} in {education.location}</h3>
-                                </div>
-                            </div>
-                        );
+                            );
+                        }
                     })}
                 </div>
                 
