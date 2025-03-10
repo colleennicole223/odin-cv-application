@@ -4,6 +4,7 @@ import MenuPersonalInfo from './components/MenuPersonalInfo.jsx'
 import Render from './components/Render.jsx'
 import Control from './components/Control.jsx'
 import MenuEducation from './components/MenuEducation.jsx'
+import MenuExperience from './components/MenuExperience.jsx'
 
 
 function App() {
@@ -48,6 +49,10 @@ function App() {
           <MenuEducation
             setEducation = {setEducation}
             getEducation = {getEducation}
+          />
+          <MenuExperience
+            setExperience = {setExperience}
+            getExperience = {getExperience}
           />
         </div>
 
