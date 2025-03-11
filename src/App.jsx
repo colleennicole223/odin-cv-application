@@ -57,7 +57,7 @@ function App() {
         </div>
 
         <div className='docColumn'>
-          <Control></Control>
+          {/* <Control></Control> */}
           <Render 
             getPersonal = {getPersonal}
             getEducation = {getEducation}

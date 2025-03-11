@@ -40,7 +40,10 @@ export default function MenuEducation({getEducation, setEducation}) {
         <h3>Location</h3>
         <input onChange={(e) => newEducation.location = e.target.value} placeholder={newEducation.location}/>
 
-        <button onClick={addEducation}>Add</button>
+        <div id='menuEnd'>
+          <button onClick={addEducation}>Add</button> 
+        </div>
+        
                 
     </div>
 

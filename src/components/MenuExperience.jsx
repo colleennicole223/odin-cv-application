@@ -38,7 +38,10 @@ export default function MenuExperience({setExperience, getExperience}){
             <h3>Location</h3>
             <input onChange={(e) => newExperience.location = e.target.value} placeholder={newExperience.location}/>
 
-            <button onClick={addExperience}>Add</button>
+            <div id='menuEnd'>
+                <button onClick={addExperience}>Add</button>
+            </div>
+            
         </div>
     )
 }
