@@ -4,59 +4,64 @@ export default function Render({getPersonal, getEducation, getExperience}) {
     return (
         <>
             <div id='render'>
-                <div id='contentHeader'>
-                    <h1>{getPersonal.name}</h1>
-                </div>
-
-                <div id='contentContact'>
-                    <h3>{getPersonal.email}</h3>
-                    <h3>{getPersonal.phoneNumber}</h3>
-                    <h3>{getPersonal.location}</h3>
-                </div>
-
-                <h2 id='contentHeader'>Education</h2>
-
-                <div>
-                    {getEducation.map(function (education) {
-                        if(education.id == 0){
-
-                        }else{
-                            return (
-                                <div key={education.id}>
-                                    <div id='contentContact'>
-                                        <h3>{education.degree}</h3>
-                                        <h3>{education.start} - {education.end}</h3>
-                                    </div>
-                                    <div id='contentContact'>
-                                        <h3>{education.university} in {education.location}</h3>
-                                    </div>
-                                </div>
-                            );
-                        }
-                    })}
-
-                    <h2 id='contentHeader'>Experience</h2>
-
-                    {getExperience.map(function (experience) {
-                        if(experience.id == 0){
-
-                        }else{
-                            return (
-                                <div key={experience.id}>
-                                    <div id='contentContact'>
-                                        <h3>{experience.title}</h3>
-                                        <h3>{experience.start} - {experience.end}</h3>
-                                    </div>
-                                    <div id='contentContact'>
-                                        <h3>{experience.company} in {experience.location}</h3>
-                                    </div>
-                                </div>
-                            );
-                        }
-                    })}
-
-                </div>
                 
+                <div id='content'>
+
+                    <div className='header'>
+                        {getPersonal.name}
+                    </div>
+
+                    <div className='contact'>
+                        <div>{getPersonal.email}</div>
+                        |
+                        <div>{getPersonal.phoneNumber}</div>
+                        |
+                        <div>{getPersonal.location}</div>
+                    </div>
+
+                    <div className='subheader'>
+                        Education
+                    </div>
+                    
+                    <div>
+                        {getEducation.map(function (education) {
+                            if(education.id == 0){
+
+                            }else{
+                                return (
+                                    <div className='item' key={education.id}>
+                                        <div className='itemHeader'>
+                                            <div>{education.degree}</div>
+                                            <div>{education.start} - {education.end}</div>
+                                        </div>
+                                        <div>{education.university} in {education.location}</div>
+                                    </div>
+                                );
+                            }
+                        })}
+
+                    <div className='subheader'>
+                        Experience
+                    </div>
+
+                        {getExperience.map(function (experience) {
+                            if(experience.id == 0){
+
+                            }else{
+                                return (
+                                    <div className='item' key={experience.id}>
+                                        <div className='itemHeader'>
+                                            <div>{experience.title}</div>
+                                            <div>{experience.start} - {experience.end}</div>
+                                        </div>
+                                        <div>{experience.company} in {experience.location}</div>
+                                    </div>
+                                );
+                            }
+                        })}
+
+                    </div>
+                </div>
             </div>
             
         </>
