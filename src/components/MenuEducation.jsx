@@ -23,6 +23,7 @@ export default function MenuEducation({getEducation, setEducation}) {
   return (
 
     <div id='menu'>
+
         <h1>Education</h1>
 
         <h3>University</h3>
@@ -43,9 +44,26 @@ export default function MenuEducation({getEducation, setEducation}) {
         <div id='menuEnd'>
           <button onClick={addEducation}>Add</button> 
         </div>
-        
-                
-    </div>
 
+        {getEducation.map(function (education) {
+          if(education.id == 0){
+           }else{
+          return (
+            <div key={education.id}>
+              <div className='row'>
+                <div className='circle'/>
+                <div>
+                  <div> {education.university} </div>
+                  <div> {education.degree} </div>
+                  <div> {education.location} </div>
+                  <div> {education.start} - {education.end} </div>
+                </div>
+              </div>
+              
+              <div className='divider'/>
+            </div>
+          );}})}        
+      
+    </div>
   )
 }

@@ -4,21 +4,21 @@ export default function Render({getPersonal, getEducation, getExperience}) {
     return (
         <>
             <div id='render'>
+
+                <div className='header'>
+                        {getPersonal.name}
+
+                        <div className='contact'>
+                            <div>{getPersonal.email}</div>
+                            |
+                            <div>{getPersonal.phoneNumber}</div>
+                            |
+                            <div>{getPersonal.location}</div>
+                        </div>
+                </div>
                 
                 <div id='content'>
-
-                    <div className='header'>
-                        {getPersonal.name}
-                    </div>
-
-                    <div className='contact'>
-                        <div>{getPersonal.email}</div>
-                        |
-                        <div>{getPersonal.phoneNumber}</div>
-                        |
-                        <div>{getPersonal.location}</div>
-                    </div>
-
+                    
                     <div className='subheader'>
                         Education
                     </div>
