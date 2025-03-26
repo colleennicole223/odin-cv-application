@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 export default function MenuEducation({getEducation, setEducation}) {
 
+    
     const lastInput = getEducation.length-1;
 
     const newEducation = {
@@ -50,7 +51,7 @@ export default function MenuEducation({getEducation, setEducation}) {
            }else{
           return (
             <div key={education.id}>
-              <div className='row'>
+              <div onClick={updateInterface(education)} className='row'>
                 <div className='circle'/>
                 <div>
                   <div> {education.university} </div>
@@ -66,4 +67,8 @@ export default function MenuEducation({getEducation, setEducation}) {
       
     </div>
   )
+}
+
+function updateInterface(education){
+
 }

@@ -5,6 +5,7 @@
   --spacing-large: 28px;
   --spacing-gap: 28px;
   --border-radius: 24px;
+  --color-grey-000: #f6f6f67a;
   --color-grey-100: #f1efef;
   --color-grey-200: #d7d7d7;
   --color-grey-900: #242424;
@@ -221,7 +222,7 @@ input{
 .divider{
   border-bottom: 1px solid var(--color-grey-200);
   margin-top: 12px;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .circle{
@@ -229,12 +230,19 @@ input{
   width: 12px;
   height: 12px;
   border-radius: 6px;
-  margin-top: 10px;
+  margin-top: 12px;
+  margin-left: 12px;
 }
 
 .row{
+  padding: 6px 0px;
   display: flex;
   gap: 24px;
+}
+
+.row:hover{
+  background-color: var(--color-grey-000);
+  border-radius: 12px;
 }
 
 
