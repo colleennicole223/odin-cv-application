@@ -4,6 +4,7 @@ export default function MenuEducation({getEducation, setEducation}) {
 
     
     const lastInput = getEducation.length-1;
+    const index = 0;
 
     const newEducation = {
       id: getEducation[lastInput].id,
@@ -20,6 +21,10 @@ export default function MenuEducation({getEducation, setEducation}) {
       console.log("Add Education " + newEducation.id);
       setEducation(getEducation.concat(newEducation));
     };
+
+    const updateInterface = (id) => {
+      console.log("Clicked existing item " + id);
+    }
     
   return (
 
@@ -28,7 +33,7 @@ export default function MenuEducation({getEducation, setEducation}) {
         <h1>Education</h1>
 
         <h3>University</h3>
-        <input onChange={(e) => newEducation.university = e.target.value} placeholder={newEducation.university}/>
+        <input onChange={(e) => newEducation.university = e.target.value} placeholder={getEducation[index].university}/>
 
         <h3>Degree</h3>
         <input onChange={(e) => newEducation.degree = e.target.value} placeholder={newEducation.degree}/>
@@ -43,15 +48,15 @@ export default function MenuEducation({getEducation, setEducation}) {
         <input onChange={(e) => newEducation.location = e.target.value} placeholder={newEducation.location}/>
 
         <div id='menuEnd'>
-          <button onClick={addEducation}>Add</button> 
+          <button className='addButton' onClick={addEducation}>Add</button> 
         </div>
-
+        
         {getEducation.map(function (education) {
           if(education.id == 0){
            }else{
           return (
             <div key={education.id}>
-              <div onClick={updateInterface(education)} className='row'>
+              <button onClick={updateInterface(education.id)} className='row'>
                 <div className='circle'/>
                 <div>
                   <div> {education.university} </div>
@@ -59,7 +64,7 @@ export default function MenuEducation({getEducation, setEducation}) {
                   <div> {education.location} </div>
                   <div> {education.start} - {education.end} </div>
                 </div>
-              </div>
+              </button>
               
               <div className='divider'/>
             </div>
@@ -69,6 +74,3 @@ export default function MenuEducation({getEducation, setEducation}) {
   )
 }
 
-function updateInterface(education){
-
-}
