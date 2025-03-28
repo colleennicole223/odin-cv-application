@@ -20,11 +20,11 @@ function App() {
   // 🏫 Store education experience, updated through MenuEducation
   const [getEducation, setEducation] = useState([
     {id: 0,
-    university: "University Name",
-    degree: "Degree Earned",
-    start: "MM/YY",
-    end: "MM/YY",
-    location: "City, ST"},
+    university: "",
+    degree: "",
+    start: "",
+    end: "",
+    location: ""},
   ]);
 
   // 🏢 Store work experience, updated through MenuExperience

@@ -2,73 +2,130 @@ import React, { useState } from 'react'
 
 export default function MenuEducation({getEducation, setEducation}) {
 
-    
-    const lastInput = getEducation.length-1;
-    const index = 0;
+    const recentIndex = getEducation.length - 1;
 
-    const newEducation = {
-      id: getEducation[lastInput].id,
-      university: getEducation[lastInput].university,
-      degree: getEducation[lastInput].degree,
-      start: getEducation[lastInput].start,
-      end: getEducation[lastInput].end,
-      location: getEducation[lastInput].location,
-    }
+    // state to track current input values
+    const [currentEducation, setCurrentEducation] = useState({
+      id: getEducation.length > 0 ? getEducation[recentIndex].id : 0,
+      university: "",
+      degree: "",
+      start: "",
+      end: "",
+      location: "",
+    });
 
-    // The addEducation funct will get the current list and add one
-    const addEducation = () => {
-      newEducation.id = getEducation[lastInput].id + 1;
-      console.log("Add Education " + newEducation.id);
-      setEducation(getEducation.concat(newEducation));
+    // state to track which education entry is being edited (null if new)
+    const [editingIndex, setEditingIndex] = useState(null);
+
+    // handle input change and update state
+    const handleInputChange = (e) => {
+      setCurrentEducation({
+        // maintain existing fields, but update field being edited 
+        ...currentEducation,
+        [e.target.name]: e.target.value, 
+      });
     };
 
-    const updateInterface = (id) => {
-      console.log("Clicked existing item " + id);
+    // add new entry or update existing one 
+    const updateEducation = () => {
+      if(editingIndex !== null){
+        // update existing entry 
+        const updateList = [...getEducation];
+        updateList[editingIndex] = currentEducation;
+        setEducation(updateList);
+        setEditingIndex(null);
+      }else{
+        // add new entry
+        setEducation([...getEducation, {...currentEducation, id: getEducation.length}]);
+      };
+
+      // reset input fields after update 
+      setCurrentEducation({
+        id: getEducation.length, 
+        university: "",
+        degree: "",
+        start: "",
+        end: "",
+        location: ""
+      });
+    };
+
+    // update input when existing entry selected 
+    const updateInterface = (index) => {
+      // set current education to selected entry values 
+      setCurrentEducation(getEducation[index])
+      // set entry to be edited
+      setEditingIndex(index);
     }
     
   return (
 
     <div id='menu'>
 
-        <h1>Education</h1>
+      <h1>Education</h1>
 
-        <h3>University</h3>
-        <input onChange={(e) => newEducation.university = e.target.value} placeholder={getEducation[index].university}/>
+      <h3>University</h3>
+      <input 
+          name='university'
+          value={currentEducation.university}
+          onChange={handleInputChange}
+          placeholder={"Enter university name"}
+        />
 
-        <h3>Degree</h3>
-        <input onChange={(e) => newEducation.degree = e.target.value} placeholder={newEducation.degree}/>
+      <h3>Degree</h3>
+      <input 
+          name='degree'
+          value={currentEducation.degree}
+          onChange={handleInputChange}
+          placeholder={"Enter degree"}
+        />
 
-        <h3>Start Date</h3>
-        <input onChange={(e) => newEducation.start = e.target.value} placeholder={newEducation.start}/>
-
-        <h3>End Date</h3>
-        <input onChange={(e) => newEducation.end = e.target.value} placeholder={newEducation.end}/>
-
-        <h3>Location</h3>
-        <input onChange={(e) => newEducation.location = e.target.value} placeholder={newEducation.location}/>
-
-        <div id='menuEnd'>
-          <button className='addButton' onClick={addEducation}>Add</button> 
-        </div>
+      <h3>Start Date</h3>
+      <input 
+          name='start'
+          value={currentEducation.start}
+          onChange={handleInputChange}
+          placeholder={"Enter start date"}
+        />
         
-        {getEducation.map(function (education) {
-          if(education.id == 0){
-           }else{
-          return (
-            <div key={education.id}>
-              <button onClick={updateInterface(education.id)} className='row'>
-                <div className='circle'/>
-                <div>
-                  <div> {education.university} </div>
-                  <div> {education.degree} </div>
-                  <div> {education.location} </div>
-                  <div> {education.start} - {education.end} </div>
-                </div>
-              </button>
-              
-              <div className='divider'/>
+      <h3>End Date</h3>
+      <input 
+          name='end'
+          value={currentEducation.end}
+          onChange={handleInputChange}
+          placeholder={"Enter end date"}
+        />
+        
+      <h3>Location</h3>
+      <input 
+          name='location'
+          value={currentEducation.location}
+          onChange={handleInputChange}
+          placeholder={"Enter location"}
+          />
+
+      {/* Update button text based on editing or adding item */}
+      <div id='menuEnd'>
+        <button className='addButton' onClick={updateEducation}>
+          {editingIndex != null ? "Update" : "Add"}
+        </button> 
+      </div>
+
+      {/* List entries */}
+      {getEducation.map((education, index) => (
+        <button
+          className='row'
+          key={education.id}
+          onClick={() => updateInterface(index)}>
+            <div className='circle'/>
+            <div>
+              <div> {education.university} </div>
+              <div> {education.degree} </div>
+              <div> {education.location} </div>
+              <div> {education.start} - {education.end} </div>
             </div>
-          );}})}        
+        </button>
+      ))}
       
     </div>
   )
