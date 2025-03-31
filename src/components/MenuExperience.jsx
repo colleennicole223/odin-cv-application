@@ -105,7 +105,7 @@ export default function MenuExperience({setExperience, getExperience}){
                 />
             
             <div id='menuEnd'>
-                <button onClick={updateExperience}>
+                <button className='addButton' onClick={updateExperience}>
                     {editingIndex != null ? "Update" : "Add"}
                 </button>
             </div>
