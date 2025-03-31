@@ -2,11 +2,9 @@ import React, { useState } from 'react'
 
 export default function MenuEducation({getEducation, setEducation}) {
 
-    const recentIndex = getEducation.length - 1;
-
-    // state to track current input values
+    // set up initial state condition
     const [currentEducation, setCurrentEducation] = useState({
-      id: getEducation.length > 0 ? getEducation[recentIndex].id : 0,
+      id: getEducation.length > 0 ? getEducation[getEducation.length - 1].id : 1,
       university: "",
       degree: "",
       start: "",
@@ -38,6 +36,7 @@ export default function MenuEducation({getEducation, setEducation}) {
         // add new entry
         setEducation([...getEducation, {...currentEducation, id: getEducation.length}]);
       };
+      // TO DO: update id to length - 1 and see if that fixes shift 
 
       // reset input fields after update 
       setCurrentEducation({
@@ -53,7 +52,8 @@ export default function MenuEducation({getEducation, setEducation}) {
     // update input when existing entry selected 
     const updateInterface = (index) => {
       // set current education to selected entry values 
-      setCurrentEducation(getEducation[index])
+      setCurrentEducation(getEducation[index]);
+
       // set entry to be edited
       setEditingIndex(index);
     }
@@ -112,19 +112,22 @@ export default function MenuEducation({getEducation, setEducation}) {
       </div>
 
       {/* List entries */}
-      {getEducation.map((education, index) => (
-        <button
-          className='row'
-          key={education.id}
-          onClick={() => updateInterface(index)}>
-            <div className='circle'/>
-            <div>
-              <div> {education.university} </div>
-              <div> {education.degree} </div>
-              <div> {education.location} </div>
-              <div> {education.start} - {education.end} </div>
-            </div>
-        </button>
+      {getEducation
+        // _, in .filter out the first index.. thanks gpt. 
+        .filter((_, index) => index != 0) 
+        .map((education, index) => (
+          <button
+            className='row'
+            key={education.id}
+            onClick={() => updateInterface(education.id)}>
+              <div className='circle'/>
+              <div>
+                <div> {education.university} </div>
+                <div> {education.degree} </div>
+                <div> {education.location} </div>
+                <div> {education.start} - {education.end} </div>
+              </div>
+          </button>
       ))}
       
     </div>
