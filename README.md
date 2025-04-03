@@ -18,21 +18,23 @@ This is my solution to the [CV Application project on The Odin Project](https://
 
 ### The challenge
 
-Create an application in React where users can input their information and generate a CV/resume. 
+Create an application in React where users can input their information and generate a mock up of a CV/resume. 
 
 ### Screenshot
 
 #### Final Screenshot
+
+![](./final.jpeg)
 
 #### Wireframe
 
 ![](./wireframe.png)
 
 
-
 ### Links
 
-
+- Solution URL: [https://github.com/colleennicole223/odin-cv-application](https://github.com/colleennicole223/odin-cv-application)
+- Live Site URL: [https://colleennicole-cv-application.netlify.app/](https://colleennicole-cv-application.netlify.app/)
 
 ## My process
 
@@ -44,17 +46,26 @@ Create an application in React where users can input their information and gener
 ### What I learned
 
 - React
-  - Practiced passing in properties into and between components
+  - Creating react components
+  - Using keys in react when tracking simple id's
+  - Using props, and functions as props
+  - Passing in states and properties between components
 - CSS
-  - Can set ratio with `aspect-ratio`
+  - Can set ratio with `aspect-ratio` 
+- Overall 
+  - Deploying a Static Site (Netlify)
 
 ### Continued development
 
-
+Would be interested in, 
+  - Adding a download feature
+  - Adding layout options for the user to select 
+  - Zoom in & out feature for ease of viewing 
 
 ### Useful resources
 
 1. Can create vite in existing folder using, `npm create vite@latest ./` from [Reddit](https://www.reddit.com/r/webdev/comments/pk92o7/use_vite_in_the_current_directory/)
+2. ChatGPT for smaller notation such using `.filter` or how to approach `handleInputChange` functions
 
 
 ## Author
